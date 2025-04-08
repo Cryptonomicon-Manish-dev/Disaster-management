@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Person</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Report a Person</h1>
+        <form method="POST" enctype="multipart/form-data" class="report-form">
+            <input type="text" name="name" placeholder="Enter person's name" required>
+            <select name="status" required>
+                <option value="missing">Missing</option>
+                <option value="found">Found</option>
+            </select>
+            <input type="file" name="image" accept="image/*">
+            <button type="submit">Report</button>
+        </form>
+        {% if message %}
+        <p class="success-message">{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

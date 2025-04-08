@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ResQNova{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1><i class="fas fa-hands-helping"></i> ResQNova</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/person/search">Search Person</a>
+                <a href="/person/report">Report Person</a>
+                <a href="/volunteer/add">Add Volunteer</a>
+                <a href="/volunteer/list">List Volunteers</a>
+            </nav>
+        </div>
+    </header>
+    <main class="content">
+        <div class="content-container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 ResQNova. All rights reserved.</p>
+            <p>Powered by <a href="https://www.example.com" target="_blank">ResQNova</p>
+        </div>
+    </footer>
+</body>
+</html>

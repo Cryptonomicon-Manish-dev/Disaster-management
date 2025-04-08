@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Add Rescue Volunteer{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Add  Volunteer Details</h2>
+    <form method="POST" class="volunteer-form">
+        <input type="text" name="name" placeholder="Volunteer Name" required>
+        <input type="text" name="contact" placeholder="Contact Information" required>
+        <input type="text" name="skill" placeholder="Skill/Expertise" required>
+        <button type="submit">Submit</button>
+    </form>
+    {% if message %}
+    <p class="success-message">{{ message }}</p>
+    {% endif %}
+</div>
+{% endblock %}

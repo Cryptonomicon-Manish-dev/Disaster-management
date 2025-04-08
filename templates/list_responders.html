@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Responders</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>List of Responders</h1>
+        <div class="responder-list">
+            {% if responders %}
+            <ul>
+                {% for responder in responders %}
+                <li>
+                    <strong>Name:</strong> {{ responder.name }}<br>
+                    <strong>Contact:</strong> {{ responder.contact }}<br>
+                    <strong>Skill:</strong> {{ responder.skill }}
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No responders available.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

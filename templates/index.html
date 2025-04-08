@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}ResQNova{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <!-- Weather Check Section -->
+    <section class="dashboard-section">
+        <h2>Weather Check</h2>
+        <form method="POST" class="search-form" id="weatherForm">
+            <input type="text" name="city" placeholder="Enter city name" required>
+            <button type="submit"><i class="fas fa-search"></i> Search</button>
+        </form>
+        {% if weather %}
+        <div class="weather-info">
+            <h3>{{ weather.city }}</h3>
+            <div class="weather-card">
+                <div class="weather-item">
+                    <i class="fas fa-cloud weather-icon"></i>
+                    <h4>Condition</h4>
+                    <p>{{ weather.weather }}</p>
+                </div>
+                <div class="weather-item">
+                    <i class="fas fa-temperature-high weather-icon"></i>
+                    <h4>Temperature</h4>
+                    <p>{{ weather.temperature }}°F</p>
+                </div>
+                <div class="weather-item">
+                    <i class="fas fa-droplet weather-icon"></i>
+                    <h4>Humidity</h4>
+                    <p>{{ weather.humidity }}%</p>
+                </div>
+                <div class="weather-item">
+                    <i class="fas fa-wind weather-icon"></i>
+                    <h4>Wind Speed</h4>
+                    <p>{{ weather.wind_speed }} m/s</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </section>
+
+    <!-- Disaster Prediction Dashboard -->
+    <section class="dashboard-section">
+        <h2>Disaster Prediction Dashboard</h2>
+        <div class="dashboard-cards">
+            <div class="card">
+                <h3>Weather Alert</h3>
+                <p>Risk Level: <strong>Low</strong></p>
+                <div class="progress-bar"><div style="width: 20%;"></div></div>
+            </div>
+            <div class="card">
+                <h3>Seismic Activity</h3>
+                <p>Risk Level: <strong>Low</strong></p>
+                <div class="progress-bar"><div style="width: 10%;"></div></div>
+            </div>
+            <div class="card">
+                <h3>Flood Risk</h3>
+                <p>Risk Level: <strong>Low</strong></p>
+                <div class="progress-bar"><div style="width: 10%;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Missing Persons Registry -->
+    <section class="dashboard-section">
+        <h2>Missing Persons Registry</h2>
+        <div class="missing-person">
+            <img src="https://via.placeholder.com/100" alt="Person">
+            <div>
+                <p><strong>Manish Yadav</strong></p>
+                <p>Last Seen: GNA University</p>
+            </div>
+        </div>
+        <div class="actions">
+            <a href="/person/report" class="button">Report Missing Person</a>
+        </div>
+    </section>
+
+    <!-- Medical Assistance -->
+    <section class="dashboard-section">
+        <h2>Medical Assistance</h2>
+        <div class="dashboard-cards">
+            <div class="card">
+                <h3>Available Hospitals</h3>
+                <p>City General Hospital</p>
+                <p>2.5 km away</p>
+                <a href="#" class="button">Contact</a>
+            </div>
+            <div class="card">
+                <h3>Emergency Services</h3>
+                <p>Ambulance</p>
+                <p>Air Rescue</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Relief Efforts -->
+    <section class="dashboard-section">
+        <h2>Support Relief Efforts</h2>
+        <div class="dashboard-cards">
+            <div class="card">
+                <h3>Financial Aid</h3>
+                <p>Support victims with monetary donations.</p>
+                <a href="#" class="button">Donate Now</a>
+            </div>
+            <div class="card">
+                <h3>Supply Donations</h3>
+                <p>Donate essential supplies and resources.</p>
+                <a href="#" class="button">Contribute</a>
+            </div>
+            <div class="card">
+                <h3>Volunteer</h3>
+                <p>Join our volunteer network.</p>
+                <a href="/volunteer/add" class="button">Register</a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

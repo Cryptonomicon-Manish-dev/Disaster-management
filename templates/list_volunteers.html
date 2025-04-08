@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}List Rescue Volunteers{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>List of Volunteers Details</h2>
+    <div class="volunteer-list">
+        {% if volunteers %}
+        <ul>
+            {% for volunteer in volunteers %}
+            <li>
+                <strong>Name:</strong> {{ volunteer.name }}<br>
+                <strong>Contact:</strong> {{ volunteer.contact }}<br>
+                <strong>Skill:</strong> {{ volunteer.skill }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>volunteers available.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
